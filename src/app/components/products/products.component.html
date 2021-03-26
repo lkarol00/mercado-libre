@@ -1,9 +1,42 @@
-<!-- Resources -->
-<h2>Results:</h2>
-<div class="card-container">
-    <a class="card" *ngFor="let product of products" target="_blank" rel="noopener" href="https://angular.io/tutorial">
-        <img [src]="product.thumbnail"/>
-        <span>{{product.title}}</span>
-        <span>{{product.price}}</span>
-    </a>
+<div class="content">
+    <div class="toolbar" role="banner">
+        <div class="nav-title" (click)="hideDetails()">
+            <h2>Mercado Karol</h2>
+        </div>
+        
+        <div class="search"> 
+            <form>
+                <input  type="text"  id="searchProduct" class="search-input"
+                name="searchProduct" minlength="2" maxlength="55" 
+                [(ngModel)]="query" required placeholder="Nombre del producto">
+                <input class="search-image" type="image"  (click)="showProducts()" name="search" src="../../../assets/lupa.png" alt="Search">
+            </form>
+
+        </div>
+    </div>
+    <div *ngIf="!disabled">
+        <h2>Resultados</h2>
+        <div class="card-container">
+            <a class="card" ([ngModel])="products" *ngFor="let product of products" (click)="showProduct(product)" ngDefaultControlrel="noopener" >
+                <div class="card-image">
+                    <img [src]="product.thumbnail"/>
+                </div>
+                <div> 
+                    <span>{{product.title}}</span>
+                    <div class="spacer"></div>
+                    <div class="spacer"></div>
+                    <span>${{product.price}}</span> 
+                </div>
+            </a>
+        </div>
+    </div> 
+    <div *ngIf="disabled" class="product-details">
+        <div>
+            <img [src]="productInfo.thumbnail"/>
+        </div>
+        <div>
+            <h2>{{ productInfo.title }}</h2>
+            <span>${{productInfo.price}}</span> 
+        </div>
+    </div>
 </div>

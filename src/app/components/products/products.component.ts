@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { ProductService } from '../../services/product.service'
 
 
@@ -9,15 +10,12 @@ import { ProductService } from '../../services/product.service'
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private productService: ProductService) { }
+  query = '';
+  products: Object;
+  productInfo: Object;
+  disabled = false;
 
-  /*product = {
-    'url': "http://http2.mlstatic.com/D_711129-MCO44819077518_022021-O.jpg",
-    'title': "Portátil Huawei Matebook 13 I5 8+512gb",
-    'price': 3379900
-  }*/
-
-  products: Object = null;
+  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
     this.productService.getProductResults("Laptop").subscribe(results =>{
@@ -25,10 +23,22 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  showProducts(query: string){
-    this.productService.getProductResults(query).subscribe(results =>{
+  showProducts() { 
+    this.hideDetails();
+    this.productService.getProductResults(this.query).subscribe(results =>{
       this.products = results["results"];
+      console.log(this.products);
     });
+  }
+
+  showProduct(product: Object){
+    this.disabled = true;
+    this.productInfo = product;
+    //this.router.navigate(['./product']);
+  }
+
+  hideDetails(){
+    this.disabled = false;
   }
 
 }

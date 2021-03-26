@@ -9,13 +9,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './components/products/products.component';
 import { FormsModule } from '@angular/forms';
 
-import { ProductService } from './services/product.service'
+import { ProductService } from './services/product.service';
+import { SharingService } from './services/sharing.service';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,7 @@ import { ProductService } from './services/product.service'
     HttpClientModule,
     FormsModule
   ],
-  providers: [ProductService],
-  bootstrap: [AppComponent]
+  providers: [ ProductService , SharingService],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

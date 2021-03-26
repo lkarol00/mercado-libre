@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+
+.spacer {
+    width: 100px;
+}
+
+.toolbar {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: #eeca55;
+    color: black;
+    font-weight: 600;
+}
+
+.toolbar img {
+    margin: 0 16px;
+}
+
+.search-image{
+    margin-left: 7px;
+    margin-bottom: -15px;
+    width: 40px;
+    height: 40px;
+}
+
+.search-input {
+    border: 0;
+    height: 40px;
+    width: 80%;
+    border-radius: 3%;
+    font-size: 15px;
+}
+
+.search{
+    width: 60%;
+    display: inline-block;
+}
