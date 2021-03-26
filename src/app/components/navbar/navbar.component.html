@@ -1,0 +1,14 @@
+<div class="toolbar" role="banner">
+    <div class="spacer"></div>
+    <div class="nav-title">
+        <h2>Mercado Karol</h2>
+    </div>
+    <div class="spacer"></div>
+    <div class="search"> 
+        <input  type="text"  id="searchProduct" class="search-input"
+                name="searchProduct" minlength="2" maxlength="55" 
+                [(ngModel)]="query" required placeholder="Nombre del producto">
+        <input class="search-image" type="image" (click)="searchProduct()" name="search" src="http://assets.stickpng.com/images/59cfc4d2d3b1936210a5ddc7.png" alt="Search">
+
+    </div>
+</div>
