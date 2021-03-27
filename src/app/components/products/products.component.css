@@ -110,7 +110,7 @@ a:hover {
 }   
 
 /* Responsive Styles */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 399px) {
 
     .card-container > *:not(.circle-link)  
     {
@@ -191,10 +191,17 @@ a:hover {
 
 .product-details {
     margin-top: 5%;
-    margin-right: 10px;
     position: relative;
     width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.pagination > button {
+    margin-right: 4px;
+    border: 0;
+    background-color: #eeca55;
+    height: 30px;
+    width: 30px;
 }
