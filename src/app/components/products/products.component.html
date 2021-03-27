@@ -34,14 +34,26 @@
     </div> 
     <div *ngIf="disabled" class="product-details">
         <div>
-            <img [src]="productInfo.main_picture"/> <!--thumbnail-->
+            <img [src]="productInfo.main_picture"/>
         </div>
         <div>
             <h1>{{ productInfo.title }}</h1>
             <p *ngIf="productInfo.original_price" style="text-decoration-line: line-through; font-size: large;">${{ productInfo.original_price }}</p> 
-            <h2>${{ productInfo.price }}</h2> 
+            <h1>${{ productInfo.price }}</h1> 
             <p style="color: gray; font-size: large;">Seller {{ productInfo.seller_name }}</p> 
-
         </div>
     </div>
+    
+    <div class="pagination">
+        <button (click)="changePagination('-')" *ngIf="page !== 0">«</button>
+        <button (click)="pagination(page)">{{ page + 1 }}</button>
+        <button (click)="pagination(page + 1)">{{ page + 2 }}</button>
+        <button (click)="pagination(page + 2)">{{ page + 3 }}</button>
+        <button (click)="pagination(page + 3)">{{ page + 4}}</button>
+        <button (click)="changePagination('+')" >»</button>
+    </div>
 </div>
+<!--<ngb-pagination
+  [(page)]="page"
+  [pageSize]="pageSize"
+  [collectionSize]="Object.keys(products).length"></ngb-pagination>-->

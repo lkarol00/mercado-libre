@@ -17,4 +17,9 @@ export class ProductService {
     return this.http.get<ResultsInterface[]>(path); 
   }
 
+  getPaginationResults(product: string, offset: number){
+    const path = this.api + product + "&offset=" + offset;
+    return this.http.get<ResultsInterface[]>(path); 
+  }
+
 }
