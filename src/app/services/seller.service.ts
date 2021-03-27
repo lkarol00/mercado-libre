@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SellersInterface } from '../models/sellers.interface';
+import { environment } from "../../environments/environment"
 
 @Injectable({
   providedIn: 'root'
 })
 export class SellerService {
 
-  private api = 'https://api.mercadolibre.com/users/'
+  api = environment.sellers;
 
   constructor(private http: HttpClient) {}
 

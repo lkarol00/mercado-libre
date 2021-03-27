@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  items: 'https://api.mercadolibre.com/items/',
+  search: 'https://api.mercadolibre.com/sites/MCO/search?q=',
+  sellers: 'https://api.mercadolibre.com/users/'
 };
 
 /*
