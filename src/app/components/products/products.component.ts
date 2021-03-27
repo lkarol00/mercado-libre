@@ -57,7 +57,6 @@ export class ProductsComponent implements OnInit {
 
   pagination(pageButton: number) { 
     this.hideDetails();
-    console.log(this.search, this.page * 50, pageButton);
     
     this.productService.getPaginationResults(this.search, pageButton * 50).subscribe(results => {
       results["results"].forEach(result => {

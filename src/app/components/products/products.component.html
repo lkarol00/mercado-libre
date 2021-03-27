@@ -40,7 +40,10 @@
             <h1>{{ productInfo.title }}</h1>
             <p *ngIf="productInfo.original_price" style="text-decoration-line: line-through; font-size: large;">${{ productInfo.original_price }}</p> 
             <h1>${{ productInfo.price }}</h1> 
-            <p style="color: gray; font-size: large;">Seller {{ productInfo.seller_name }}</p> 
+            <p style="color: gray; font-size: large;">Seller {{ productInfo.seller_name }}</p>
+            <a target="_blank" [href]="productInfo.permalink" name="search" alt="Link mercado libre">
+                <img style="height: 50px; width: 200px;" src="../../../assets/mercado-libre-logo.png"/>
+            </a>
         </div>
     </div>
     
