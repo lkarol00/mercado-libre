@@ -44,7 +44,7 @@
         </div>
     </div>
     
-    <div class="pagination">
+    <div class="pagination" *ngIf="!disabled">
         <button (click)="changePagination('-')" *ngIf="page !== 0">«</button>
         <button (click)="pagination(page)">{{ page + 1 }}</button>
         <button (click)="pagination(page + 1)">{{ page + 2 }}</button>
