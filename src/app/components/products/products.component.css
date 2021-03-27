@@ -1,6 +1,6 @@
 .nav-title {
-    margin-left: 50px;
-    margin-right: 45px;
+    margin-left: 80px;
+    margin-right: 100px;
 }
 
 svg.material-icons {
@@ -101,12 +101,12 @@ svg#rocket-smoke {
 a,
 a:visited,
 a:hover {
-    color: #1976d2;
+    color: #027cf5;
     text-decoration: none;
 }
 
 a:hover {
-    color: #125699;
+    color: #1c4a77;
 }   
 
 /* Responsive Styles */
@@ -191,6 +191,7 @@ a:hover {
 
 .product-details {
     margin-top: 5%;
+    margin-right: 10px;
     position: relative;
     width: 80%;
     display: flex;

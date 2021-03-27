@@ -1,5 +1,4 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { SharingService } from 'src/app/services/sharing.service';
 import { ProductsComponent } from '../products/products.component'
 
 @Component({

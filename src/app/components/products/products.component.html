@@ -3,7 +3,6 @@
         <div class="nav-title" (click)="hideDetails()">
             <h2>Mercado Karol</h2>
         </div>
-        
         <div class="search"> 
             <form>
                 <input  type="text"  id="searchProduct" class="search-input"
@@ -22,8 +21,11 @@
                     <img [src]="product.thumbnail"/>
                 </div>
                 <div> 
-                    <span>{{product.title}}</span>
+                    <strong>
+                        <span style="text-transform:uppercase;">{{product.title}}</span>
+                    </strong>
                     <div class="spacer"></div>
+                    <span style="color: gray;">Seller {{product.seller_name}}</span>
                     <div class="spacer"></div>
                     <span>${{product.price}}</span> 
                 </div>
@@ -32,11 +34,14 @@
     </div> 
     <div *ngIf="disabled" class="product-details">
         <div>
-            <img [src]="productInfo.thumbnail"/>
+            <img [src]="productInfo.main_picture"/> <!--thumbnail-->
         </div>
         <div>
-            <h2>{{ productInfo.title }}</h2>
-            <span>${{productInfo.price}}</span> 
+            <h1>{{ productInfo.title }}</h1>
+            <p *ngIf="productInfo.original_price" style="text-decoration-line: line-through; font-size: large;">${{ productInfo.original_price }}</p> 
+            <h2>${{ productInfo.price }}</h2> 
+            <p style="color: gray; font-size: large;">Seller {{ productInfo.seller_name }}</p> 
+
         </div>
     </div>
 </div>

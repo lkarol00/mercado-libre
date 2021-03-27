@@ -10,8 +10,9 @@ import { ProductsComponent } from './components/products/products.component';
 import { FormsModule } from '@angular/forms';
 
 import { ProductService } from './services/product.service';
-import { SharingService } from './services/sharing.service';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { SellerService } from './services/seller.service';
+import { ItemService } from './services/item.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     HttpClientModule,
     FormsModule
   ],
-  providers: [ ProductService , SharingService],
+  providers: [ ProductService, SellerService, ItemService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
